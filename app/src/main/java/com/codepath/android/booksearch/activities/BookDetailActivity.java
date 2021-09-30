@@ -109,19 +109,19 @@ public class BookDetailActivity extends AppCompatActivity {
     }
 
     private void setShareIntent() {
-        ImageView ivImage = (ImageView) findViewById(R.id.ivBookCover);
-        final TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
+        // ImageView ivImage = (ImageView) findViewById(R.id.ivBookCover);
+        // final TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
         // Get access to the URI for the bitmap
-        Uri bmpUri = getLocalBitmapUri(ivImage);
+        // Uri bmpUri = getLocalBitmapUri(ivImage);
         // Construct a ShareIntent with link to image
-        Intent shareIntent = new Intent();
+        // Intent shareIntent = new Intent();
         // Construct a ShareIntent with link to image
-        shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.setType("*/*");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, (String)tvTitle.getText());
-        shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
+        // shareIntent.setAction(Intent.ACTION_SEND);
+        // shareIntent.setType("*/*");
+        // shareIntent.putExtra(Intent.EXTRA_TEXT, (String)tvTitle.getText());
+        // shareIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
         // Launch share menu
-        startActivity(Intent.createChooser(shareIntent, "Share Image"));
+        // startActivity(Intent.createChooser(shareIntent, "Share Image"));
 
     }
 
