@@ -3,7 +3,7 @@ package com.codepath.android.booksearch.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +18,7 @@ import com.codepath.android.booksearch.models.Book;
 import com.codepath.android.booksearch.net.BookClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
-import org.apache.http.Header;
+import cz.msebera.android.httpclient.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
-public class BookListActivity extends ActionBarActivity {
+public class BookListActivity extends AppCompatActivity {
     public static final String BOOK_DETAIL_KEY = "book";
     private ListView lvBooks;
     private BookAdapter bookAdapter;
@@ -45,6 +45,7 @@ public class BookListActivity extends ActionBarActivity {
         lvBooks.setAdapter(bookAdapter);
         progress = (ProgressBar) findViewById(R.id.progress);
         setupBookSelectedListener();
+        fetchBooks("friend");
     }
 
     public void setupBookSelectedListener() {
